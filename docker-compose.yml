@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mysql-order:
+    image: mysql:8.3.0
+    container_name: mysql-order
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: order
+      MYSQL_USER: orderuser
+      MYSQL_PASSWORD: orderpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-order-data:/var/lib/mysql
+
+  postgres-student:
+    image: postgres:15-alpine
+    container_name: postgres-student
+    environment:
+      POSTGRES_DB: student
+      POSTGRES_USER: studentuser
+      POSTGRES_PASSWORD: studentpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-student-data:/var/lib/postgresql/data
+
+  postgres-product:
+    image: postgres:15-alpine
+    container_name: postgres-product
+    environment:
+      POSTGRES_DB: product
+      POSTGRES_USER: productuser
+      POSTGRES_PASSWORD: productpassword
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-product-data:/var/lib/postgresql/data
+
+volumes:
+  mysql-order-data:
+  postgres-student-data:
+  postgres-product-data:
