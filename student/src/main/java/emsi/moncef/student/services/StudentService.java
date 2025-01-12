@@ -65,4 +65,53 @@ public class StudentService {
         return studentRepository.findByDateOfBirthBetween(startOfYear, endOfYear);
     }
 
+    public Student addStudent(Student student) {
+
+        studentRepository.save(student);
+        return student;
+
+    }
+
+    public Optional<Student> updateStudent(String serial, Student updatedStudent) {
+        Optional<Student> existingStudent = fetchStudentBySerial(serial);
+        if (existingStudent.isPresent()) {
+            Student student = existingStudent.get();
+            student.setFirstName(updatedStudent.getFirstName());
+            student.setLastName(updatedStudent.getLastName());
+            student.setEmail(updatedStudent.getEmail());
+            student.setPhoneNumber(updatedStudent.getPhoneNumber());
+            student.setAddress(updatedStudent.getAddress());
+            student.setDateOfBirth(updatedStudent.getDateOfBirth());
+            student.setYearOfStudy(updatedStudent.getYearOfStudy());
+            student.setMajor(updatedStudent.getMajor());
+            return Optional.of(studentRepository.save(student));
+        }
+        return Optional.empty();
+    }
+
+    public Optional<Student> patchStudent(String serial, Student partialUpdate) {
+        Optional<Student> existingStudent = fetchStudentBySerial(serial);
+        if (existingStudent.isPresent()) {
+            Student student = existingStudent.get();
+            if (partialUpdate.getFirstName() != null) student.setFirstName(partialUpdate.getFirstName());
+            if (partialUpdate.getLastName() != null) student.setLastName(partialUpdate.getLastName());
+            if (partialUpdate.getEmail() != null) student.setEmail(partialUpdate.getEmail());
+            if (partialUpdate.getPhoneNumber() != null) student.setPhoneNumber(partialUpdate.getPhoneNumber());
+            if (partialUpdate.getAddress() != null) student.setAddress(partialUpdate.getAddress());
+            if (partialUpdate.getDateOfBirth() != null) student.setDateOfBirth(partialUpdate.getDateOfBirth());
+            if (partialUpdate.getYearOfStudy() != 0) student.setYearOfStudy(partialUpdate.getYearOfStudy());
+            if (partialUpdate.getMajor() != null) student.setMajor(partialUpdate.getMajor());
+            return Optional.of(studentRepository.save(student));
+        }
+        return Optional.empty();
+    }
+
+    public boolean deleteStudent(String serial) {
+        Optional<Student> existingStudent = fetchStudentBySerial(serial);
+        if (existingStudent.isPresent()) {
+            studentRepository.delete(existingStudent.get());
+            return true;
+        }
+        return false;
+    }
 }
