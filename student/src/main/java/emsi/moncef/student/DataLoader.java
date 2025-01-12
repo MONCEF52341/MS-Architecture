@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Random;
@@ -32,8 +31,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) {
         try {
             loadStudents();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error(e.getMessage());
             System.exit(1);
         }
@@ -61,4 +59,4 @@ public class DataLoader implements CommandLineRunner {
             studentRepository.save(student);
         }
     }
-    }
+}
