@@ -23,6 +23,6 @@ public class Order {
     private String customerName;
     private String customerEmail;
     private String shippingAddress;
-    private BigDecimal totalAmount;
-    private String status;
+    private Long skuCode;
+    private Long quantity;
 }

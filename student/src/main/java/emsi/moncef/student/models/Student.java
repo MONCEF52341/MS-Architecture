@@ -1,8 +1,10 @@
 package emsi.moncef.student.models;
 
 
+import emsi.moncef.student.enums.Major;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +14,7 @@ import java.time.LocalDate;
 @Table(name = "student_tbl")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Student {
 
     @Id
@@ -24,6 +27,7 @@ public class Student {
     private String email;
     private String phoneNumber;
     private String address;
-    private String major;
+    @Enumerated(EnumType.STRING)
+    private Major major;
     private int yearOfStudy;
 }
