@@ -19,7 +19,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long skuCode;
+    @Column(nullable = false, unique = true)
+    private String skuCode;
 
     private String name;
     private String description;
