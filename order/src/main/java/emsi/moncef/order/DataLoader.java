@@ -11,8 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 
 @Component
@@ -28,21 +30,36 @@ public class DataLoader implements CommandLineRunner {
     @Autowired
     private OrderLineRepository orderLineRepository;
 
+    private static final String SKU_CODES_API_URL = "http://localhost:8081/api/products/skucodes";
+
     @Override
     public void run(String... args) {
         try {
-            loadOrders();
+            List<String> skuCodes = fetchSkuCodes();
+            if (skuCodes.isEmpty()) {
+                log.warn("No SKU codes found. Skipping order creation.");
+                return;
+            }
+            loadOrders(skuCodes);
         } catch (Exception e) {
             log.error("Error loading data: {}", e.getMessage());
             System.exit(1);
         }
     }
 
-    private void loadOrders() {
+    private List<String> fetchSkuCodes() {
+        RestTemplate restTemplate = new RestTemplate();
+        try {
+            return restTemplate.getForObject(SKU_CODES_API_URL, List.class);
+        } catch (Exception e) {
+            log.error("Failed to fetch SKU codes from API: {}", e.getMessage());
+            return List.of(); // Retourner une liste vide si l'API échoue
+        }
+    }
+
+    private void loadOrders(List<String> skuCodes) {
         for (int i = 0; i < 50; i++) {
-
             String orderNumber = "ORD-" + faker.random().hex(8);
-
 
             Order order = Order.builder()
                     .orderNumber(orderNumber)
@@ -55,11 +72,13 @@ public class DataLoader implements CommandLineRunner {
 
             orderRepository.save(order);
 
-
             int numOrderLines = random.nextInt(10) + 1;
             for (int j = 0; j < numOrderLines; j++) {
+                // Choisir un SKU aléatoire depuis les SKU récupérés
+                String skuCode = skuCodes.get(random.nextInt(skuCodes.size()));
+
                 OrderLine orderLine = OrderLine.builder()
-                        .skuCode("PRD-" + faker.random().hex(8))
+                        .skuCode(skuCode)
                         .quantity(random.nextLong(100) + 1)
                         .order(order)
                         .build();
