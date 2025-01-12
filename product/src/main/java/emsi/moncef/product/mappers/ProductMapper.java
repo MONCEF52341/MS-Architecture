@@ -27,4 +27,15 @@ public class ProductMapper {
                 .map(this::toDto)
                 .collect(Collectors.toList());
     }
+
+    public void toEntity(ProductDTO productDTO, Product product) {
+        product.setSkuCode(productDTO.skuCode());
+        product.setName(productDTO.name());
+        product.setDescription(productDTO.description());
+        product.setPrice(productDTO.price());
+        product.setStockQuantity(productDTO.stockQuantity());
+        product.setCategory(productDTO.category());
+        product.setManufacturer(productDTO.manufacturer());
+        product.setAvailable(productDTO.isAvailable());
+    }
 }
