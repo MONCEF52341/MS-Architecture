@@ -9,7 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -17,6 +19,8 @@ public class DataLoader implements CommandLineRunner {
 
     private final Faker faker = new Faker();
     private final Random random = new Random();
+    Set<String> usedSerials = new HashSet<>();
+
     @Autowired
     private StudentRepository studentRepository;
 
@@ -28,9 +32,16 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadStudents() {
         for (int i = 0; i < 100; i++) {
+            String uniqueSerial;
+            do {
+                uniqueSerial = "ETD-" + faker.random().hex(8);
+            } while (usedSerials.contains(uniqueSerial));
+            usedSerials.add(uniqueSerial);
+
             Student student = Student.builder()
                     .firstName(faker.name().firstName())
                     .lastName(faker.name().lastName())
+                    .serial(uniqueSerial)
                     .dateOfBirth(LocalDate.now().minusYears(random.nextInt(20) + 18))
                     .email(faker.internet().emailAddress())
                     .phoneNumber(faker.phoneNumber().phoneNumber())
@@ -41,6 +52,4 @@ public class DataLoader implements CommandLineRunner {
             studentRepository.save(student);
         }
     }
-
-
-}
+    }

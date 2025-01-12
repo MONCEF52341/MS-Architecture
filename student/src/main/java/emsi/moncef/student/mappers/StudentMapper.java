@@ -12,6 +12,7 @@ public class StudentMapper {
 
     public StudentDTO toDto(Student student) {
         return new StudentDTO(
+                student.getSerial(),
                 student.getFirstName(),
                 student.getLastName(),
                 student.getDateOfBirth(),

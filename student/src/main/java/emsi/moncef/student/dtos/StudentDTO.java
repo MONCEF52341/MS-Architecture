@@ -5,6 +5,7 @@ import emsi.moncef.student.enums.Major;
 import java.time.LocalDate;
 
 public record StudentDTO(
+        String serial,
         String firstName,
         String lastName,
         LocalDate dateOfBirth,

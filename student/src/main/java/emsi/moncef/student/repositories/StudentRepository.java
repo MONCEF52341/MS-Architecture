@@ -10,6 +10,8 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<Student, Long> {
     List<Student> findByMajor(Major major);
 
+    Student findBySerial(String serial);
+
     Student findByFirstNameIgnoreCaseAndLastNameIgnoreCase(String firstName, String lastName);
 
     List<Student> findByYearOfStudy(int year);
@@ -21,8 +23,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     Student findByEmailContainingIgnoreCase(String email);
 
     Student findByPhoneNumber(String phoneNumber);
-
-    List<Student> findByDateOfBirth(LocalDate birthdate);
 
     List<Student> findByDateOfBirthBetween(LocalDate startDate, LocalDate endDate);
 }

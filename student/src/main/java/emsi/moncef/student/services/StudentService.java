@@ -16,6 +16,14 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
+    public List<Student> fetchAllStudents() {
+        return studentRepository.findAll();
+    }
+
+    public Optional<Student> fetchStudentBySerial(String serial) {
+        return Optional.ofNullable(studentRepository.findBySerial(serial));
+    }
+
     public List<Student> fetchStudentsByMajor(Major major) {
         return studentRepository.findByMajor(major);
     }

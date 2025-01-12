@@ -25,6 +25,26 @@ public class StudentController {
     @Autowired
     private StudentMapper studentMapper;
 
+    @GetMapping("")
+    public ResponseEntity<List<StudentDTO>> getAllStudents() {
+        List<Student> students = studentService.fetchAllStudents();
+        if (students.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        List<StudentDTO> studentDTOs = studentMapper.toDtoList(students);
+        return ResponseEntity.ok(studentDTOs);
+    }
+    @GetMapping("/by-serial")
+    public ResponseEntity<StudentDTO> fetchStudentBySerial(@RequestParam String serial) {
+        Optional<Student> studentOptional = studentService.fetchStudentBySerial(serial);
+        if (studentOptional.isPresent()) {
+            StudentDTO studentDTO = studentMapper.toDto(studentOptional.get());
+            return ResponseEntity.ok(studentDTO);
+        } else {
+            return ResponseEntity.noContent().build();
+        }
+    }
+
     @GetMapping("/by-major")
     public ResponseEntity<List<StudentDTO>> fetchStudentsByMajor(@RequestParam Major major) {
         List<Student> students = studentService.fetchStudentsByMajor(major);

@@ -20,6 +20,9 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false,unique = true)
+    private String serial;
+
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
