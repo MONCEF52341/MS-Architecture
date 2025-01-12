@@ -7,10 +7,7 @@ import emsi.moncef.student.models.Student;
 import emsi.moncef.student.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +31,7 @@ public class StudentController {
         List<StudentDTO> studentDTOs = studentMapper.toDtoList(students);
         return ResponseEntity.ok(studentDTOs);
     }
+
     @GetMapping("/by-serial")
     public ResponseEntity<StudentDTO> fetchStudentBySerial(@RequestParam String serial) {
         Optional<Student> studentOptional = studentService.fetchStudentBySerial(serial);
@@ -136,5 +134,38 @@ public class StudentController {
         }
         List<StudentDTO> studentDTOs = studentMapper.toDtoList(students);
         return ResponseEntity.ok(studentDTOs);
+    }
+
+    @PostMapping
+    public ResponseEntity<StudentDTO> addStudent(@RequestBody StudentDTO studentDTO) {
+        Student student = studentMapper.toEntity(studentDTO);
+        Student newStudent = studentService.addStudent(student);
+        return ResponseEntity.ok(studentMapper.toDto(newStudent));
+    }
+
+
+    @PutMapping("/{serial}")
+    public ResponseEntity<StudentDTO> updateStudent(@PathVariable String serial, @RequestBody StudentDTO studentDTO) {
+        Student updatedStudentEntity = studentMapper.toEntity(studentDTO);
+        Optional<Student> updatedStudent = studentService.updateStudent(serial, updatedStudentEntity);
+        return updatedStudent.map(student -> ResponseEntity.ok(studentMapper.toDto(student)))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PatchMapping("/{serial}")
+    public ResponseEntity<StudentDTO> patchStudent(@PathVariable String serial, @RequestBody StudentDTO studentDTO) {
+        Student partialStudentEntity = studentMapper.toEntity(studentDTO);
+        Optional<Student> patchedStudent = studentService.patchStudent(serial, partialStudentEntity);
+        return patchedStudent.map(student -> ResponseEntity.ok(studentMapper.toDto(student)))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{serial}")
+    public ResponseEntity<Void> deleteStudent(@PathVariable String serial) {
+        boolean deleted = studentService.deleteStudent(serial);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }
