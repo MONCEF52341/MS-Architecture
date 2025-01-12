@@ -4,10 +4,12 @@ import emsi.moncef.order.dtos.OrderLineDTO;
 import emsi.moncef.order.models.Order;
 import emsi.moncef.order.models.OrderLine;
 import emsi.moncef.order.repositories.OrderRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class OrderLineMapper {
 
     private final OrderRepository orderRepository;
