@@ -29,4 +29,24 @@ public class StudentMapper {
                 .map(this::toDto)
                 .collect(Collectors.toList());
     }
+
+    public Student toEntity(StudentDTO dto) {
+        Student student = new Student();
+        student.setSerial(dto.serial());
+        student.setFirstName(dto.firstName());
+        student.setLastName(dto.lastName());
+        student.setDateOfBirth(dto.dateOfBirth());
+        student.setEmail(dto.email());
+        student.setPhoneNumber(dto.phoneNumber());
+        student.setAddress(dto.address());
+        student.setMajor(dto.major());
+        student.setYearOfStudy(dto.yearOfStudy());
+        return student;
+    }
+
+    public List<Student> toEntitiesList(List<StudentDTO> studentsDTOlist) {
+        return studentsDTOlist.stream()
+                .map(this::toEntity)
+                .collect(Collectors.toList());
+    }
 }
