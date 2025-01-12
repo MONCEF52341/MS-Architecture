@@ -8,71 +8,72 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
     @Autowired
     private ProductMapper productMapper;
 
-    public List<ProductDTO> getAllProduct() {
-        List<Product> orders = productRepository.findAll();
-        return productMapper.toDtoList(orders);
-    }
-    public Optional<Product> fetchProductByskuCode(String skuCode) {
-        return Optional.ofNullable(productRepository.findBySkuCode(skuCode));
-    }
-    public Product addProduct(Product product) {
-
-        productRepository.save(product);
-        return product;
-
+    
+    public List<ProductDTO> getAllProducts() {
+        List<Product> products = productRepository.findAll();
+        return productMapper.toDtoList(products);
     }
 
-    public Optional<Product> updateProduct(String skuCode, Product updatedProduct) {
-        Optional<Product> existingProduct = fetchProductByskuCode(skuCode);
-        if (existingProduct.isPresent()) {
-            Product product = existingProduct.get();
-            product.setSkuCode(updatedProduct.getSkuCode());
-            product.setName(updatedProduct.getName());
-            product.setDescription(updatedProduct.getDescription());
-            product.setPrice(updatedProduct.getPrice());
-            product.setStockQuantity(updatedProduct.getStockQuantity());
-            product.setCategory(updatedProduct.getCategory());
-            product.setManufacturer(updatedProduct.getManufacturer());
-            product.setAvailable(updatedProduct.isAvailable());
-
-            return Optional.of(productRepository.save(product));
-        }
-        return Optional.empty();
+    
+    public ProductDTO getProductBySkuCode(String skuCode) {
+        Product product = productRepository.findBySkuCode(skuCode);
+        return productMapper.toDto(product);
     }
 
-    public Optional<Product> patchProduct(String skuCode, Product partialUpdate) {
-        Optional<Product> existingProduct = fetchProductByskuCode(skuCode);
-        if (existingProduct.isPresent()) {
-            Product product = existingProduct.get();
-            if (partialUpdate.getSkuCode() != null) product.setSkuCode(partialUpdate.getSkuCode());
-            if (partialUpdate.getName() != null) product.setName(partialUpdate.getName());
-            if (partialUpdate.getDescription() != null) product.setDescription(partialUpdate.getDescription());
-            if (partialUpdate.getPrice() != null) product.setPrice(partialUpdate.getPrice());
-            if (partialUpdate.getStockQuantity() != 0) product.setStockQuantity(partialUpdate.getStockQuantity());
-            if (partialUpdate.getCategory() != null) product.setCategory(partialUpdate.getCategory());
-            if (partialUpdate.getManufacturer() != null) product.setManufacturer(partialUpdate.getManufacturer());
-            product.setAvailable(partialUpdate.isAvailable());
-            return Optional.of(productRepository.save(product));
-        }
-        return Optional.empty();
+    
+    public ProductDTO addProduct(ProductDTO productDTO) {
+        Product product = new Product();
+        productMapper.toEntity(productDTO, product);
+        Product savedProduct = productRepository.save(product);
+        return productMapper.toDto(savedProduct);
     }
 
-    public boolean deleteProduct(String skuCode) {
-        Optional<Product> existingProduct = fetchProductByskuCode(skuCode);
-        if (existingProduct.isPresent()) {
-            productRepository.delete(existingProduct.get());
-            return true;
-        }
-        return false;
+    
+    public ProductDTO updateProduct(String skuCode, ProductDTO updatedProductDTO) {
+        Product existingProduct = productRepository.findBySkuCode(skuCode);
+        productMapper.toEntity(updatedProductDTO, existingProduct);
+        Product savedProduct = productRepository.save(existingProduct);
+        return productMapper.toDto(savedProduct);
+    }
+
+    
+    public ProductDTO patchProduct(String skuCode, ProductDTO partialUpdateDTO) {
+        Product existingProduct = productRepository.findBySkuCode(skuCode);
+
+        if (partialUpdateDTO.name() != null) existingProduct.setName(partialUpdateDTO.name());
+        if (partialUpdateDTO.description() != null) existingProduct.setDescription(partialUpdateDTO.description());
+        if (partialUpdateDTO.price() != null) existingProduct.setPrice(partialUpdateDTO.price());
+        if (partialUpdateDTO.stockQuantity() != 0) existingProduct.setStockQuantity(partialUpdateDTO.stockQuantity());
+        if (partialUpdateDTO.category() != null) existingProduct.setCategory(partialUpdateDTO.category());
+        if (partialUpdateDTO.manufacturer() != null) existingProduct.setManufacturer(partialUpdateDTO.manufacturer());
+        existingProduct.setAvailable(partialUpdateDTO.isAvailable());
+
+        Product savedProduct = productRepository.save(existingProduct);
+        return productMapper.toDto(savedProduct);
+    }
+
+    
+    public void deleteProduct(String skuCode) {
+        Product product = productRepository.findBySkuCode(skuCode);
+        productRepository.delete(product);
+    }
+
+
+    public List<String> getAllSkuCodes() {
+        return productRepository.findAll()
+                .stream()
+                .map(Product::getSkuCode)
+                .collect(Collectors.toList());
     }
 }
