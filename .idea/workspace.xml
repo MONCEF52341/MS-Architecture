@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="86021998-e9f8-4a26-ae8f-b3df05e094b6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MONCEF52341"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MONCEF52341/MS-Architecture.git",
+    "accountId": "cb3379e4-fb55-450a-808e-63b113ce2064"
+  }
+}]]></component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2rUyNlYAaefzPAOhIPSxQKSZk8f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DiscoveryApplication.executor": "Debug",
+    "Spring Boot.GatewayApplication.executor": "Debug",
+    "Spring Boot.OrderApplication.executor": "Debug",
+    "Spring Boot.ProductApplication.executor": "Debug",
+    "Spring Boot.StudentApplication.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/moncef/EMSI/MS-Architecture/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="emsi.moncef.product.mappers" />
+      <recent name="emsi.moncef.order.enums" />
+      <recent name="emsi.moncef.student.enums" />
+      <recent name="emsi.moncef.product.enums" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/student/src" />
+      <recent name="$PROJECT_DIR$/student/src/main/java/emsi/moncef/student" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ProductApplication">
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="emsi.moncef.discovery.DiscoveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="emsi.moncef.gateway.GatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="emsi.moncef.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="emsi.moncef.order.OrderApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="emsi.moncef.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="emsi.moncef.product.ProductApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="student" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="emsi.moncef.student.StudentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.OrderApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86021998-e9f8-4a26-ae8f-b3df05e094b6" name="Changes" comment="" />
+      <created>1736627910805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736627910805</updated>
+      <workItem from="1736627911916" duration="2158000" />
+      <workItem from="1736682577887" duration="30865000" />
+    </task>
+    <task id="LOCAL-00001" summary="Mise en place d'enums">
+      <option name="closed" value="true" />
+      <created>1736684045052</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736684045052</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Mise en place de la couche Repository">
+      <option name="closed" value="true" />
+      <created>1736684215117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736684215117</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Mise en place d'une politique ddl create drop, en plus d'un dataloader pour alimenter la bdd à l'aide de faker">
+      <option name="closed" value="true" />
+      <created>1736690228907</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690228907</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout des getters et setters sur student">
+      <option name="closed" value="true" />
+      <created>1736690262286</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690262286</updated>
+    </task>
+    <task id="LOCAL-00005" summary="reformating">
+      <option name="closed" value="true" />
+      <created>1736690280949</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690280949</updated>
+    </task>
+    <task id="LOCAL-00006" summary="creation d'un DTO pour student">
+      <option name="closed" value="true" />
+      <created>1736690301422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690301422</updated>
+    </task>
+    <task id="LOCAL-00007" summary="creation d'un mapper pour student &lt;-&gt; studentDTO">
+      <option name="closed" value="true" />
+      <created>1736690568184</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690568184</updated>
+    </task>
+    <task id="LOCAL-00008" summary="couche repo">
+      <option name="closed" value="true" />
+      <created>1736690580461</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690580461</updated>
+    </task>
+    <task id="LOCAL-00009" summary="couche service">
+      <option name="closed" value="true" />
+      <created>1736690591050</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690591050</updated>
+    </task>
+    <task id="LOCAL-00010" summary="couche controller">
+      <option name="closed" value="true" />
+      <created>1736690782568</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690782568</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ajout d'un champ métier unique (matricule/serial)">
+      <option name="closed" value="true" />
+      <created>1736692609101</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736692609101</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test">
+      <option name="closed" value="true" />
+      <created>1736692943763</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736692943763</updated>
+    </task>
+    <task id="LOCAL-00013" summary="gestion d'un edge case">
+      <option name="closed" value="true" />
+      <created>1736694076138</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736694076138</updated>
+    </task>
+    <task id="LOCAL-00014" summary="passage en create-drop">
+      <option name="closed" value="true" />
+      <created>1736695700150</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736695700150</updated>
+    </task>
+    <task id="LOCAL-00015" summary="reformat">
+      <option name="closed" value="true" />
+      <created>1736695803000</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1736695803000</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add/delete (put/patch)update sur student">
+      <option name="closed" value="true" />
+      <created>1736695978352</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736695978352</updated>
+    </task>
+    <task id="LOCAL-00017" summary="mapping dto -&gt; entity pour un mapper quasi complet (il manque">
+      <option name="closed" value="true" />
+      <created>1736696102923</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736696102923</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add, update (put/patch) delete student by serial">
+      <option name="closed" value="true" />
+      <created>1736696153630</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736696153630</updated>
+    </task>
+    <task id="LOCAL-00019" summary="idea">
+      <option name="closed" value="true" />
+      <created>1736698957835</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736698957835</updated>
+    </task>
+    <task id="LOCAL-00020" summary="j'ai découplé commande en order et orderline, une orderline ne pouvant appartenir qu'à une seule order l">
+      <option name="closed" value="true" />
+      <created>1736699030939</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699030939</updated>
+    </task>
+    <task id="LOCAL-00021" summary="creation des record DTO + l'enum status">
+      <option name="closed" value="true" />
+      <created>1736699056979</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699056980</updated>
+    </task>
+    <task id="LOCAL-00022" summary="correction de lombok + ajout de faker">
+      <option name="closed" value="true" />
+      <created>1736699072706</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699072706</updated>
+    </task>
+    <task id="LOCAL-00023" summary="ajout d'un repo pour la classe orderline">
+      <option name="closed" value="true" />
+      <created>1736699098060</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699098061</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix skucode en string et non en int">
+      <option name="closed" value="true" />
+      <created>1736699116632</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699116632</updated>
+    </task>
+    <task id="LOCAL-00025" summary="mapper bi directionnel Dto &lt;-&gt; entity pour OrderLine">
+      <option name="closed" value="true" />
+      <created>1736699236130</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699236130</updated>
+    </task>
+    <task id="LOCAL-00026" summary="mapper bi directionnel Dto &lt;-&gt; entity pour Order">
+      <option name="closed" value="true" />
+      <created>1736699241015</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699241015</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Data loader pour remplir la base de données au démarrage (il faudra trouver un moyen que les sku code soit commun entre le service order et le service product)">
+      <option name="closed" value="true" />
+      <created>1736699288887</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1736699288887</updated>
+    </task>
+    <task id="LOCAL-00028" summary="ajout d'un status">
+      <option name="closed" value="true" />
+      <created>1736701803773</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1736701803773</updated>
+    </task>
+    <task id="LOCAL-00029" summary="les mappers sont maintenant des beans">
+      <option name="closed" value="true" />
+      <created>1736701854291</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1736701854292</updated>
+    </task>
+    <task id="LOCAL-00030" summary="creation du services">
+      <option name="closed" value="true" />
+      <created>1736701873654</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1736701873654</updated>
+    </task>
+    <task id="LOCAL-00031" summary="ajout de méthodes dans le repo">
+      <option name="closed" value="true" />
+      <created>1736701887379</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1736701887379</updated>
+    </task>
+    <task id="LOCAL-00032" summary="ajout de la couche controller">
+      <option name="closed" value="true" />
+      <created>1736701899630</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1736701899630</updated>
+    </task>
+    <task id="LOCAL-00033" summary="mise en place d'un DTO">
+      <option name="closed" value="true" />
+      <created>1736704128445</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1736704128445</updated>
+    </task>
+    <task id="LOCAL-00034" summary="mise en place d'un mapper produit produitDTO">
+      <option name="closed" value="true" />
+      <created>1736704759825</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1736704759825</updated>
+    </task>
+    <task id="LOCAL-00035" summary="mise en place du repo produit">
+      <option name="closed" value="true" />
+      <created>1736707598569</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1736707598569</updated>
+    </task>
+    <task id="LOCAL-00036" summary="mise en place du service produit">
+      <option name="closed" value="true" />
+      <created>1736707603599</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1736707603599</updated>
+    </task>
+    <task id="LOCAL-00037" summary="completion du mapper">
+      <option name="closed" value="true" />
+      <created>1736708822057</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1736708822057</updated>
+    </task>
+    <task id="LOCAL-00038" summary="ajout d'une exception custom">
+      <option name="closed" value="true" />
+      <created>1736708831369</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1736708831369</updated>
+    </task>
+    <task id="LOCAL-00039" summary="le service produit">
+      <option name="closed" value="true" />
+      <created>1736708843385</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1736708843385</updated>
+    </task>
+    <task id="LOCAL-00040" summary="mise en place du controller produit">
+      <option name="closed" value="true" />
+      <created>1736712046918</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1736712046918</updated>
+    </task>
+    <task id="LOCAL-00041" summary="le loader des produits">
+      <option name="closed" value="true" />
+      <created>1736712057046</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1736712057046</updated>
+    </task>
+    <task id="LOCAL-00042" summary="le loader des commandes se base sur le loader des produits, si produits ne démarre pas, commandes ne pourra pas démarrer">
+      <option name="closed" value="true" />
+      <created>1736712093410</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1736712093410</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add, update (put/patch) delete student by serial" />
+    <MESSAGE value="idea" />
+    <MESSAGE value="j'ai découplé commande en order et orderline, une orderline ne pouvant appartenir qu'à une seule order l" />
+    <MESSAGE value="creation des record DTO + l'enum status" />
+    <MESSAGE value="correction de lombok + ajout de faker" />
+    <MESSAGE value="ajout d'un repo pour la classe orderline" />
+    <MESSAGE value="fix skucode en string et non en int" />
+    <MESSAGE value="mapper bi directionnel Dto &lt;-&gt; entity pour OrderLine" />
+    <MESSAGE value="mapper bi directionnel Dto &lt;-&gt; entity pour Order" />
+    <MESSAGE value="Data loader pour remplir la base de données au démarrage (il faudra trouver un moyen que les sku code soit commun entre le service order et le service product)" />
+    <MESSAGE value="ajout d'un status" />
+    <MESSAGE value="les mappers sont maintenant des beans" />
+    <MESSAGE value="creation du services" />
+    <MESSAGE value="ajout de méthodes dans le repo" />
+    <MESSAGE value="ajout de la couche controller" />
+    <MESSAGE value="mise en place d'un DTO" />
+    <MESSAGE value="mise en place d'un mapper produit produitDTO" />
+    <MESSAGE value="mise en place du repo produit" />
+    <MESSAGE value="mise en place du service produit" />
+    <MESSAGE value="completion du mapper" />
+    <MESSAGE value="ajout d'une exception custom" />
+    <MESSAGE value="le service produit" />
+    <MESSAGE value="mise en place du controller produit" />
+    <MESSAGE value="le loader des produits" />
+    <MESSAGE value="le loader des commandes se base sur le loader des produits, si produits ne démarre pas, commandes ne pourra pas démarrer" />
+    <option name="LAST_COMMIT_MESSAGE" value="le loader des commandes se base sur le loader des produits, si produits ne démarre pas, commandes ne pourra pas démarrer" />
+  </component>
+</project>
