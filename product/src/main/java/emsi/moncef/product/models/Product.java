@@ -3,9 +3,7 @@ package emsi.moncef.product.models;
 import emsi.moncef.product.enums.Category;
 import emsi.moncef.product.enums.Manufacturer;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -14,6 +12,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Table(name = "product_tbl")
 @Builder
+@Getter
+@Setter
 public class Product {
 
     @Id
