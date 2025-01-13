@@ -19,19 +19,19 @@ public class ProductService {
     @Autowired
     private ProductMapper productMapper;
 
-    
+
     public List<ProductDTO> getAllProducts() {
         List<Product> products = productRepository.findAll();
         return productMapper.toDtoList(products);
     }
 
-    
+
     public ProductDTO getProductBySkuCode(String skuCode) {
         Product product = productRepository.findBySkuCode(skuCode);
         return productMapper.toDto(product);
     }
 
-    
+
     public ProductDTO addProduct(ProductDTO productDTO) {
         Product product = new Product();
         productMapper.toEntity(productDTO, product);
@@ -39,7 +39,7 @@ public class ProductService {
         return productMapper.toDto(savedProduct);
     }
 
-    
+
     public ProductDTO updateProduct(String skuCode, ProductDTO updatedProductDTO) {
         Product existingProduct = productRepository.findBySkuCode(skuCode);
         productMapper.toEntity(updatedProductDTO, existingProduct);
@@ -47,7 +47,7 @@ public class ProductService {
         return productMapper.toDto(savedProduct);
     }
 
-    
+
     public ProductDTO patchProduct(String skuCode, ProductDTO partialUpdateDTO) {
         Product existingProduct = productRepository.findBySkuCode(skuCode);
 
@@ -63,7 +63,7 @@ public class ProductService {
         return productMapper.toDto(savedProduct);
     }
 
-    
+
     public void deleteProduct(String skuCode) {
         Product product = productRepository.findBySkuCode(skuCode);
         productRepository.delete(product);

@@ -21,16 +21,13 @@ import java.util.Random;
 public class DataLoader implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(DataLoader.class);
+    private static final String SKU_CODES_API_URL = "http://localhost:8081/api/products/skucodes";
     private final Faker faker = new Faker();
     private final Random random = new Random();
-
     @Autowired
     private OrderRepository orderRepository;
-
     @Autowired
     private OrderLineRepository orderLineRepository;
-
-    private static final String SKU_CODES_API_URL = "http://localhost:8081/api/products/skucodes";
 
     @Override
     public void run(String... args) {

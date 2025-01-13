@@ -21,26 +21,26 @@ public class OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
-    
+
     public List<OrderDTO> getAllOrders() {
         List<Order> orders = orderRepository.findAll();
         return orderMapper.toDtoList(orders);
     }
 
-    
+
     public ResponseEntity<OrderDTO> getOrderByOrderNumber(String orderNumber) {
         Optional<Order> order = orderRepository.findByOrderNumber(orderNumber);
         return order.map(value -> ResponseEntity.ok(orderMapper.toDto(value))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    
+
     public OrderDTO createOrder(OrderDTO orderDTO) {
         Order order = orderMapper.toEntity(orderDTO);
         Order savedOrder = orderRepository.save(order);
         return orderMapper.toDto(savedOrder);
     }
 
-    
+
     public ResponseEntity<OrderDTO> updateOrder(String orderNumber, OrderDTO updatedOrderDTO) {
         Optional<Order> existingOrder = orderRepository.findByOrderNumber(orderNumber);
         if (existingOrder.isPresent()) {
@@ -51,7 +51,7 @@ public class OrderService {
         return ResponseEntity.notFound().build();
     }
 
-    
+
     public ResponseEntity<OrderDTO> patchOrder(String orderNumber, OrderDTO updatedOrderDTO) {
         Optional<Order> existingOrder = orderRepository.findByOrderNumber(orderNumber);
         if (existingOrder.isPresent()) {
