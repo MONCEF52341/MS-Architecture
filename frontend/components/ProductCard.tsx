@@ -7,12 +7,12 @@ interface ProductCardProps {
   product: Product
 }
 
-const randomImageId = Math.floor(Math.random() * 1000) + 1;
+const randomImageId = Math.floor(Math.random() * 300) + 1;
 
 
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const imageUrl = `https://picsum.photos/id/${((randomImageId*Math.floor(Math.random() * 1000) + 1)/1000).toFixed(0)}/300/100`
+  const imageUrl = `https://picsum.photos/id/${((randomImageId*Math.floor(Math.random() * 300) + 1)/1000).toFixed(0)}/300/100`
 
   return (
     <Card className="overflow-hidden">
