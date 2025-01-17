@@ -1,9 +1,9 @@
 "use client"
 
+import { EditStudentForm } from '@/components/EditStudentForm'
 import { Badge } from '@/components/ui/badge'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
-import { DataTable } from '@/components/ui/data-table'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,21 +18,22 @@ import { format } from 'date-fns'
 import { fr } from 'date-fns/locale'
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { DataTable } from './ui/data-table'
 
 export default function StudentList() {
   const [students, setStudents] = useState<Student[]>([])
 
-  useEffect(() => {
-    async function fetchStudents() {
-      try {
-        const response = await fetch('http://localhost:9000/api/students')
-        const data = await response.json()
-        setStudents(data)
-      } catch (error) {
-        console.error('Erreur lors de la récupération des étudiants:', error)
-      }
+  const fetchStudents = async () => {
+    try {
+      const response = await fetch('http://localhost:9000/api/students')
+      const data = await response.json()
+      setStudents(data)
+    } catch (error) {
+      console.error('Erreur lors de la récupération des étudiants:', error)
     }
+  }
 
+  useEffect(() => {
     fetchStudents()
   }, [])
 
@@ -131,8 +132,9 @@ export default function StudentList() {
                 Copier l'email
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Voir les détails</DropdownMenuItem>
-              <DropdownMenuItem>Modifier l'étudiant</DropdownMenuItem>
+              <DropdownMenuItem>
+                <EditStudentForm student={student} onStudentUpdated={fetchStudents} />
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         )
