@@ -1,4 +1,4 @@
-```markdown
+
 # Instructions de Démarrage
 
 ## Démarrer les services Docker
@@ -18,4 +18,3 @@ Démarrez les applications dans l'ordre suivant :
 3. product
 4. order
 5. student
-```
